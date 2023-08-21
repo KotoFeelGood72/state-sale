@@ -574,6 +574,26 @@
 	left: -14.6rem;
 	width: 29.2rem;
 	height: 25.3rem;
+	background-image: url('../../i/topmark.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include flex-center;
+
+	.topmarker-text {
+		font-size: 2.5rem;
+		color: $dark;
+		text-align: center;
+		font-family: $font_2;
+		transform: rotate(-30deg);
+		span {
+			display: block;
+			color: $red;
+			font-size: 2.5rem;
+			font-family: $font_3;
+			font-weight: 600;
+		}
+	}
 }
 .real {
 }
@@ -978,6 +998,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 	grid-gap: 10rem 7rem;
+	counter-reset: item;
 
 	@include bp($point_2) {
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr))
@@ -989,16 +1010,95 @@
 .money-item {
 	@include flex-start;
 	align-items: flex-start;
+	counter-increment: item;
+
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&:nth-child(1) {
+		img {
+			margin-top: 1.5rem;
+			margin-left: -1.1rem;
+			width: 9.2rem;
+			@include bp($point_2) {
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
+	&:nth-child(2) {
+		img {
+			margin-top: 1.5rem;
+			margin-left: -5.8rem;
+			width: 15.9rem;
+			@include bp($point_2) {
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
+	&:nth-child(3) {
+		img {
+			margin-top: 1.5rem;
+			margin-left: -1.8rem;
+			width: 13rem;
+			@include bp($point_2) {
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
+	&:nth-child(4) {
+		img {
+			margin-top: 2rem;
+			margin-left: -6.4rem;
+			width: 17.2rem;
+			@include bp($point_2) {
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
 	@include bp($point_4) {
 		flex-direction: column;
 	}
 }
 .money_item--img {
 	margin-right: 4rem;
-	max-width: 17.2rem;
-	margin-top: -5rem;
+	min-width: 11.2rem;
+	position: relative;
+	z-index: 2;
 	@include bp($point_2) {
-		width: 100%;
+		margin: 0 0 2rem 0;
+	}
+	&:after {
+		content: '0' counter(item);
+		position: absolute;
+		top: -5.3rem;
+		left: 0;
+		font-size: 3.5rem;
+		font-family: $font_3;
+		@include bp($point_2) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	&:before {
+		width: 11.2rem;
+		height: 11.2rem;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $red;
+		border-radius: 2.5rem;
+		z-index: -1;
+		@include bp($point_2) {
+			// width: 20rem;
+			// height: 20rem;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	@include bp($point_4) {
@@ -1158,7 +1258,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	max-width: 78.6rem;
+	max-width: 42%;
 	border-top-right-radius: 4rem;
 	border-bottom-right-radius: 4rem;
 	overflow: hidden;
@@ -1334,6 +1434,16 @@
 .rev-next {
 }
 .reviews_slider {
+	height: 39.3rem;
+	@include bp($point_4) {
+		height: auto;
+	}
+	.swiper-wrapper {
+		height: 100%;
+		@include bp($point_4) {
+			height: auto;
+		}
+	}
 
 	.swiper-slide  {
 		background-color: $dark;
@@ -1432,7 +1542,7 @@
 	height: 76.3rem;
 	position: relative;
 	@include bp($point_4) {
-		height: 80rem;
+		height: auto;
 	}
 
 	overflow: hidden;
@@ -1442,6 +1552,11 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+
+		@include bp($point_4) {
+			position: static;
+			height: 40rem;
+		}
 	}
 
 }
@@ -1455,14 +1570,15 @@
 	padding: 6rem;
 	border-radius: 3rem;
 	@include bp($point_2) {
-		left: 50%;
-		transform: translate(-50%, -50%);
+		position: static;
+		transform: translate(0)!important;
+		border-radius: 0;
 	}
 	
 	@include bp($point_4) {
 		padding: 3rem;
 		width: 100%;
-		max-width: 90%;
+		// max-width: 90%;
 		top: auto;
 		
 		bottom: 5rem;
