@@ -18,6 +18,10 @@ $(document).ready(function ($) {
 	if($('.reviews_slider')) {
 		loadVisibleContent();
 	}
+
+	if($('.header')) {
+		headerMenu();
+	}
 });
 
 $(window).on('load', function () {
@@ -192,7 +196,28 @@ function loadVisibleContent() {
 
 
 
+function headerMenu() {
+	let itemNav = document.querySelectorAll('nav > ul > li > a')
 
+	itemNav.forEach(el => {
+			el.addEventListener('click', (e) => {
+					let activeItem = document.querySelector('nav > ul > li > a.active');
+					if (activeItem) {
+							activeItem.classList.remove('active');
+					}
+					el.classList.add('active');
+			})
+	});
+}
+
+window.onscroll = function showHeader() {
+	var header = document.querySelector('.header');
+	if(window.pageYOffset > 100){
+			header.classList.add('fixed');
+	} else{
+			header.classList.remove('fixed');
+	}
+}
 
 
 

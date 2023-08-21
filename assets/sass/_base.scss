@@ -80,3 +80,34 @@ a {
 
 }
 
+
+
+nav {
+	a {
+		&.active {
+			color: $red
+		}
+	}
+}
+
+.header_nav {
+	a {
+		position: relative;
+		&.active {
+			color: $white;
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 140%;
+				height: 140%;
+				content: '';
+				background-color: $dark;
+				z-index: -1;
+				border-radius: .5rem;
+				pointer-events: none;
+			}
+		}
+	}
+}

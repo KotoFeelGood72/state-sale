@@ -1,5 +1,5 @@
 .header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: $header;
@@ -8,8 +8,14 @@
 	@include z-index(header);
 	color: $white;
 	@include flex-center;
+	transition: all .3s ease;
 	a {
 		color: $white
+	}
+
+	&.fixed {
+		background-color: #3535357a;
+		backdrop-filter: blur(30px)
 	}
 }
 .header {
@@ -52,6 +58,7 @@
 				padding: 2rem 2rem 0 0;
 				font-size: 2.2rem;
 			}
+
 		}
 	}
 }
