@@ -1434,26 +1434,18 @@
 .rev-next {
 }
 .reviews_slider {
-	height: 39.3rem;
-	@include bp($point_4) {
-		height: auto;
-	}
-	.swiper-wrapper {
-		height: 100%;
-		@include bp($point_4) {
-			height: auto;
-		}
-	}
 
 	.swiper-slide  {
 		background-color: $dark;
 		border-radius: 3rem;
 		padding: 4rem;
 		color: $white;
+		min-height: 39.3rem;
 
 		@include bp($point_4) {
 			padding: 2rem;
 			border-radius: 2rem;
+			min-height: auto;
 		}
 	}
 
