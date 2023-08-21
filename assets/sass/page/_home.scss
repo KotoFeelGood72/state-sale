@@ -1,0 +1,1566 @@
+.hero {
+	background: url('../../i/hero.jpg') center/cover no-repeat;
+	position: relative;
+	top: -$header;
+	min-height: calc(94vh + $header);
+	color: $white;
+	background-attachment: fixed;
+
+	@include bp($point_4) {
+		background-attachment: scroll;
+	}
+	@include bp($point_1) {
+		min-height: calc(90vh + $header);
+	}
+}
+.section_in {
+}
+.hero_main {
+	padding: 20.8rem 0 16rem 0;
+	@include flex-start;
+
+	@include bp($point_2) {
+		text-align: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	@include bp($point_4) {
+		padding: 15rem 0 10rem 0;
+	}
+}
+.hero-content {
+	position: relative;
+	&:after {
+		position: absolute;
+		top: 35%;
+		right: -18%;
+		width: 14.4rem;
+		height: 3.4rem;
+		content: '';
+		background: url('../../i/arrow-right.svg') center/contain no-repeat;
+
+		@include bp($point_2) {
+			display: none;
+		}
+	}
+
+	.btn {
+		button {
+			padding: 2.8rem 4rem;
+			font-size: 2rem;
+			font-family: $font_3;
+		}
+	}
+
+	max-width: 65.3rem;
+	margin-right: 16.6rem;
+
+	@include bp($point_2) {
+		margin: 0 0 6rem 0;
+	}
+
+	h1 {
+		font-size: 5rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 2rem;
+
+		@include bp($point_4) {
+			font-size: 3.6rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+	p {
+		font-size: 2.5rem;
+		max-width: 60rem;
+		@include bp($point_2) {
+			max-width: 100%;
+		}
+
+		@include bp($point_4) {
+			font-size: 2.3rem;
+		}
+	}
+
+	ul {
+		padding: 4rem 0 6rem 0;
+		counter-reset: item;
+		li {
+			position: relative;
+			@include flex-start;
+			font-size: 2rem;
+			@include bp($point_2) {
+				justify-content: center;
+				font-size: 2.4rem;
+			}
+			@include bp($point_4) {
+				font-size: 1.8rem;
+			}
+			&:before {
+				counter-increment: item;
+				content: "0" counter(item);
+				width: 4.6rem;
+				height: 4.6rem;
+				@include flex-center;
+				background-color: $red;
+				border-radius: 100%;
+				margin-right: 2rem;
+				min-width: 4.6rem;
+				@include bp($point_4) {
+					font-size: 1.8rem;
+					margin-top: -1rem;
+				}
+			}
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
+.btn {
+}
+.hero-form {
+	max-width: 50.1rem;
+	background-color: $white;
+	border-radius: 3rem;
+	border: .1rem solid rgba(255, 255, 255, 0.20);
+	color: $dark;
+	padding: 8rem 5.3rem;
+
+
+
+	@include bp($point_4) {
+		padding: 4rem 3rem;
+	}
+	.form-notice {
+		color: $dark;
+		a {
+			color: $dark;
+			&:hover {
+				color: $dark;
+				opacity: .7;
+			}
+		}
+	}
+}
+.hero_form--head {
+	text-align: center;
+	margin-bottom: 4rem;
+	h3 {
+		font-size: 2.8rem;
+		margin-bottom: 1rem;
+		font-family: $font_3;
+	}
+
+	p {
+		opacity: .7;
+	}
+}
+.hero_action {
+
+	.app-input {
+		margin-bottom: 2rem;
+		input {
+			@include app;
+			background-color: #3535351A;
+			border-radius: 1.5rem;
+			padding: 2.2rem 2rem;
+			color: $dark;
+			width: 100%;
+
+			@include bp($point_4) {
+				padding: 2rem;
+			}
+
+			&.error {
+				border-color: $red;
+			}
+			&:-ms-input-placeholder {
+				opacity: .7;
+				color: $dark;
+			}
+			&::-webkit-input-placeholder {
+				opacity: .7;
+				color: $dark;
+			}
+			&::placeholder {
+				color: $dark;
+			}
+		}
+	}
+
+	.btn  {
+		width: 100%;
+		margin-bottom: 1.5rem;
+		input[type="submit"] {
+			padding: 2.1rem;
+			width: 100%;
+			font-family: $font_3;
+			width: 100%;
+		}
+	}
+}
+.app-input {
+}
+.form-notice {
+	font-size: 1.6rem;
+	opacity: .7;
+	text-align: center;
+	a {
+		color: $dark;
+	}
+}
+.what {
+}
+.what_main {
+
+	h2 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 11.1rem;
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+}
+.what-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	grid-gap: 8.8rem 3rem;
+	margin-bottom: 20rem;
+
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		grid-gap: 10rem 4rem;
+		margin-bottom: 10rem;
+	}
+
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		grid-gap: 8rem 2rem;
+	}
+
+	li {
+		background-color: $dark;
+		border-radius: 3rem;
+		color: $white;
+		padding: 0 4rem 5rem 4rem;
+		@include bp($point_2) {
+			padding: 0 2rem 3rem 2rem;
+		}
+		
+		&:last-child {
+			padding: 4rem 4rem 5rem 4rem;
+			background-color: $red;
+			position: relative;
+
+			@include bp($point_2) {
+				padding: 2rem 2rem 3rem 2rem;
+				overflow: hidden;
+			}
+
+			.btn {
+				width: 100%;
+				bottom: 4rem;
+				left: 4rem;
+				right: 4rem;
+				position: absolute;
+				max-width: 34rem;
+				@include bp($point_2) {
+					max-width: calc(100% - 4rem);
+					left: 2rem;
+					bottom: 2rem;
+				}
+
+				@include bp($point_4) {
+					position: static;
+					margin-top: 3rem;
+					max-width: 100%;
+				}
+				button {
+					width: 100%;
+					padding: 2.3rem;
+					@include bp($point_0) {
+						font-size: 2.4rem;
+					}
+				}
+			}
+		}
+
+		h3 {
+			font-size: 2.2rem;
+			font-family: $font_3;
+			margin-bottom: 2rem;
+			@include bp($point_0) {
+				font-size: 2.6rem;
+			}
+
+			@include bp($point_2) {
+				font-size: 2.4rem;
+			}
+			
+			span {
+				color: $red;
+			}
+		}
+
+		p {
+			opacity: .8;
+			font-family: $font_0;
+			@include bp($point_0) {
+				font-size: 2rem;
+			}
+			@include bp($point_2) {
+				font-size: 1.8rem;
+			}
+		}
+		img {
+			width: 15.3rem;
+			height: 15.3rem;
+			border-radius: 5rem;
+			margin-bottom: 3rem;
+			margin: -5.1rem 0 3rem 0;
+			@include bp($point_2) {
+				width: 12rem;
+				height: 12rem;
+				border-radius: 2rem;
+			}
+		}
+	}
+}
+.what-item {
+}
+.services {
+}
+.services_main {
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+
+	&>h3 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 6rem;
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+}
+
+.services-item {
+	@include flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&>div {
+		@include bp($point_0) {
+			max-width: 45%;
+		}
+		@include bp($point_2) {
+			max-width: 100%;
+		}
+	}
+	&:nth-child(2n + 2) {
+		.services_item--content {
+			order: 0;
+			margin-right: 6rem;
+			@include bp($point_0) {
+				margin-right: 3rem;
+			}
+			@include bp($point_2) {
+				order: 1;
+				margin-right: 0;
+			}
+		}
+		.services_item--img {
+			order: 1;
+			margin-right: 0;
+			@include bp($point_2) {
+				order: 0;
+			}
+		}
+	}
+
+	.btn {
+		button {
+			padding: 2.3rem 6rem;
+			font-family: $font_3;
+			font-size: 2rem;
+		}
+	}
+
+	h3 {
+		font-size: 3.2rem;
+		font-family: $font_3;
+		margin-bottom: 2rem;
+
+		@include bp($point_2) {
+			font-size: 2.6rem;
+		}
+	}
+
+	p {
+		margin-bottom: 4.5rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 10rem;
+		@include bp($point_2) {
+			margin-bottom: 0;
+		}
+	}
+}
+.services_item--img {
+	height: 31.5rem;
+	border-radius: 3rem;
+	overflow: hidden;
+	margin-right: 6rem;
+	@include bp($point_0) {
+		margin-right: 3rem;
+		height: auto;
+		width: auto;
+	}
+
+	@include bp($point_2) {
+		margin: 0 0 2rem 0;
+	}
+	// width: 100%;
+	img {
+		height: auto;
+	}
+}
+
+.services_list {
+	@include bp($point_2) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		grid-gap: 6rem 5rem;
+	}
+}
+
+.services_item--content {
+	max-width: 61.5rem;
+}
+.topsale {
+	background: url('../../i/topsalle-bg.jpg') center/cover no-repeat;
+	color: $white;
+	position: relative;
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.topsale_main {
+	@include flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+
+	&>div {
+		@include bp($point_0) {
+			max-width: 45%;
+		}
+		@include bp($point_2) {
+			max-width: 100%;
+		}
+	}
+}
+.topsale_content {
+	z-index: 3;
+	padding: 14rem 0 21.9rem 0;
+	max-width: 72.6rem;
+
+	@include bp($point_2) {
+		padding: 15rem 0;
+	}
+
+	@include bp($point_4) {
+		padding: 10rem 0;
+	}
+
+	.btn {
+		button {
+			padding: 2.3rem 4.5rem;
+			font-family: $font_3;
+		}
+	}
+
+	h3 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 2rem;
+
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+
+	&>p {
+		font-size: 2.5rem;
+		margin-bottom: 6.4rem;
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+	}
+
+	ul {
+		margin-bottom: 7rem;
+		li {
+			position: relative;
+			padding-left: 6.5rem;
+			font-size: 2rem;
+			&:before {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				width: 4rem;
+				height: 4rem;
+				background: $red;
+				border-radius: 1rem;
+				content: url('https://api.iconify.design/iconamoon/check-light.svg?color=white&width=28&height=28');
+				@include flex-center;
+			}
+			&:not(:last-child) {
+				margin-bottom: 4.4rem;
+			}
+		}
+	}
+}
+.topsale_img {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	@include bp($point_2) {
+		display: none;
+	}
+	img {
+		&:first-child {
+			height: 100%;
+
+			@include bp($point_2) {
+				height: auto;
+			}
+			object-fit: cover;
+			border-radius: 4rem 0 0 4rem;
+		}
+	}
+}
+.topmarker {
+	position: absolute;
+	bottom: 12.4rem;
+	left: -14.6rem;
+	width: 29.2rem;
+	height: 25.3rem;
+}
+.real {
+}
+.real_main {
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.real_head {
+	margin-bottom: 8rem;
+	&>h4 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 3rem;
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+
+	p {
+		font-size: 2.5rem;
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+	}
+}
+.real-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	grid-gap: 3rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+	&>div {
+		border-radius: 3rem;
+		color: $white;
+		padding: 6rem;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include bp($point_4) {
+			padding: 4rem 2rem;
+			border-radius: 2rem;
+		}
+		ul {
+			margin-bottom: 4.5rem;
+			li {
+				@include flex-start;
+				font-size: 2rem;
+
+				@include bp($point_4) {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				p {
+					margin-right: 1rem;
+					@include bp($point_4) {
+						font-size: 2.2rem;
+						margin: 0 0 1rem 0;
+					}
+				}
+
+				span {
+					font-size: 2.2rem;
+					font-family: $font_3;
+
+					@include bp($point_0) {
+						font-size: 2.4rem;
+					}
+				}
+				&:not(:last-child) {
+					margin-bottom: 2.8rem;
+				}
+			}
+		}
+
+
+		.card-content {
+			&>h5 {
+				font-size: 2.8rem;
+				margin-bottom: 4.2rem;
+			}
+		}
+		&.red {
+			background-color: rgba(53, 53, 53, 0.80);
+			.card-bottom {
+				span {
+					background-color: $red;
+				}
+			}
+		}
+		
+		&.green {
+			background-color: $dark;
+			.card-bottom {
+				span {
+					background-color: #00C12B;
+
+				}
+			}
+		}
+	}
+}
+
+.example-pag, .reviews-pag {
+	display: none;
+	@include bp($point_2) {
+		display: block;
+		left: 50%!important;
+		transform: translateX(-50%);
+		position: absolute;
+		width: auto!important;
+	}
+
+	@include bp($point_4) {
+		width: 100%!important;
+		@include flex-center
+	}
+
+	.swiper-pagination-bullet {
+		width: 1.3rem;
+		height: 1.3rem;
+		@include bp($point_4) {
+			width: 1rem;
+			height: 1rem;
+		}
+		&-active {
+			background-color: $red;
+		}
+	}
+}
+
+
+.red {
+}
+.card-bottom {
+	@include flex-start;
+	padding-top: 4.5rem;
+	@include bp($point_4) {
+		flex-direction: column;
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: -50%;
+		width: 200%;
+		height: .1rem;
+		content: '';
+		border-bottom: .1rem solid rgba(255, 255, 255, 0.20);
+	}
+	position: relative;
+
+	p {
+		margin-right: 3.9rem;
+		font-size: 2.2rem;
+		@include bp($point_0) {
+			font-size: 2.4rem;
+		}
+
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
+
+		@include bp($point_4) {
+			margin: 0 0 2rem 0;
+		}
+	}
+
+	span {
+		display: block;
+		padding: 2rem 4rem;
+		font-size: 2.5rem;
+		font-family: $font_3;
+		border-radius: 2rem;
+		@include bp($point_0) {
+			font-size: 2.8rem;
+		}
+	}
+}
+.green {
+}
+.example {
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.example_main {
+}
+.example-head {
+	@include flex-space;
+
+	h5 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+
+		}
+	}
+
+}
+.example-nav {
+	@include flex-end;
+
+	@include bp($point_2) {
+		display: none;
+	}
+	&>div {
+		width: 6.5rem;
+		height: 6.5rem;
+		@include flex-center;
+		background-color: $red;
+		border-radius: 2rem;
+		cursor: pointer;
+		user-select: none;
+
+		&.swiper-button-disabled {
+			background: #FF484880;
+			pointer-events: none;
+		}
+		img {
+			width: 1.4rem;
+		}
+
+
+		&:first-child {
+			margin-right: 3rem;
+		}
+		&:nth-child(2) {
+
+			img {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.example_navBtn {
+}
+.ex-prev {
+}
+.icons {
+}
+.iconamoon:arrow-down- {
+}
+.iconify {
+}
+.ex-next {
+}
+.example-slider {
+	padding: 6rem 0!important;
+	margin-bottom: 4rem;
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.example_slide {
+	box-shadow: 0 1rem 1rem 0 rgba(19, 99, 254, 0.07);
+	background-color: $dark;
+	border-radius: 3rem;
+	color: $white;
+}
+.example_slide--img {
+	border-top-left-radius: 3rem;
+	border-top-right-radius: 3rem;
+	overflow: hidden;
+	img {
+		// height: 100%;
+		// object-fit: cover;
+	}
+}
+.example_slide--content {
+	padding: 2rem 3rem 6rem 3rem;
+
+	@include bp($point_2) {
+		padding: 1.5rem 2rem 4rem 1.5rem
+	}
+
+
+	ul {
+		li {
+			@include flex-start;
+
+			@include bp($point_0) {
+				font-size: 2.4rem;
+			}
+			@include bp($point_2) {
+				font-size: 1.8rem;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			p {
+				margin-right: 0.7rem;
+				margin-top: 0.1rem;
+				opacity: .8;
+				@include bp($point_4) {
+					margin: 0 0 1rem 0;
+				}
+			}
+
+			span {
+				font-family: $font_3;
+				font-size: 2rem;
+				@include bp($point_4) {
+					font-size: 1.8rem;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	h3 {
+		margin-bottom: 3rem;
+		font-size: 2.2rem;
+
+		@include bp($point_0) {
+			font-size: 3rem;
+		}
+
+		@include bp($point_4) {
+			font-size: 2.4rem;
+		}
+	}
+}
+.example-bottom {
+	@include flex-center;
+	align-items: flex-end;
+
+	img {
+		width: 12rem;
+		margin-right: 4.2rem;
+		margin-bottom: 1rem;
+		@include bp($point_4) {
+			display: none;
+		}
+	}
+
+	.btn {
+		button {
+			padding: 2.3rem 4rem;
+			font-family: $font_3;
+			font-size: 2rem;
+			@include bp($point_0) {
+				font-size: 2.4rem;
+			}
+			@include bp($point_4) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+}
+.money {
+	background: url('../../i/money-bg.jpg') center/cover no-repeat;
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.money_main {
+	padding: 13rem 0 19.7rem 0;
+	color: $white;
+
+	@include bp($point_4) {
+		padding: 10rem 0;
+	}
+
+	h5 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 13rem;
+
+		@include bp($point_4) {
+			font-size: 3rem;
+			margin-bottom: 6rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+}
+.money-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+	grid-gap: 10rem 7rem;
+
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr))
+	}
+	@include bp($point_4) {
+		grid-gap: 5rem 0
+	}
+}
+.money-item {
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_4) {
+		flex-direction: column;
+	}
+}
+.money_item--img {
+	margin-right: 4rem;
+	max-width: 17.2rem;
+	margin-top: -5rem;
+	@include bp($point_2) {
+		width: 100%;
+	}
+
+	@include bp($point_4) {
+		margin: 0 0 2rem 0;
+		max-width: 13rem;
+	}
+}
+.money_item--content {
+	max-width: 43.2rem;
+	@include bp($point_2) {
+		width: 100%;
+	}
+
+	h3 {
+		margin-bottom: 1.5rem;
+		font-size: 2.2rem;
+		font-family: $font_3;
+		@include bp($point_0) {
+			font-size: 2.8rem;
+		}
+
+		@include bp($point_4) {
+			font-size: 2.4rem;
+		}
+	}
+
+	p {
+		opacity: .8;
+		@include bp($point_0) {
+			font-size: 2.2rem;
+		}
+
+		@include bp($point_4) {
+			font-size: 1.8rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	a {
+		display: block;
+		padding-top: 1rem;
+		font-size: 2rem;
+		font-family: $font_3;
+		color: $white;
+		@include bp($point_0) {
+			font-size: 2.6rem;
+		}
+	}
+}
+.about {
+}
+.about_main {
+	@include flex-start;
+	align-items: flex-start;
+	margin-bottom: 20rem;
+
+	@include bp($point_2) {
+		flex-direction: column;
+		margin-bottom: 10rem;
+	}
+}
+.about_img {
+	margin-right: 6rem;
+	@include bp($point_2) {
+		margin: 0 0 6rem 0;
+	}
+	img {
+		border-radius: 3rem;
+		overflow: hidden;
+		margin-bottom: 2rem;
+	}
+
+
+
+	h3 {
+		font-size: 2.5rem;
+		font-family: $font_3;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		opacity: .8;
+	}
+
+}
+.about_content {
+	max-width: 72.7rem;
+
+	.btn {
+		button {
+			padding: 2.3rem 4.9rem;
+			font-size: 2rem;
+			font-family: $font_3;
+			@include bp($point_0) {
+				font-size: 2.4rem;
+			}
+		}
+	}
+
+	h5 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 3rem;
+
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+}
+.about-txt {
+	margin-bottom: 4rem;
+
+	
+	p, ul, span {
+		padding: 1.5rem 0;
+		@include bp($point_0) {
+			font-size: 2.2rem;
+		}
+		@include bp($point_4) {
+			font-size: 1.8rem;
+		}
+	}
+
+
+	ul {
+		li {
+			padding: 1rem;
+			@include bp($point_0) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+}
+.credit {
+	background-color: $dark;
+	color: $white;
+	position: relative;
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.credit_main {
+	@include flex-end;
+	padding: 23.2rem 0 23.3rem 0;
+	@include bp($point_2) {
+		padding: 10rem 0 40rem 0;
+	}
+}
+.credit_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 78.6rem;
+	border-top-right-radius: 4rem;
+	border-bottom-right-radius: 4rem;
+	overflow: hidden;
+	@include bp($point_0) {
+		max-width: 45%;
+	}
+
+	@include bp($point_2) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		max-width: 100%;
+		opacity: .7;
+		height: 30rem;
+		top: auto;
+		border-radius: 0;
+		border-top-left-radius: 3rem;
+		border-top-right-radius: 3rem;
+	}
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.credit_form--w {
+	max-width: 67.5rem;
+	@include bp($point_0) {
+		max-width: 45%;
+	}
+	@include bp($point_2) {
+		max-width: 100%;
+	}
+}
+.credit_head {
+	margin-bottom: 4rem;
+	h3 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+		margin-bottom: 2rem;
+		span {
+			font-family: $font_3;
+		}
+	}
+	p {
+		font-size: 2.5rem;
+		font-family: $font_0;
+	}
+}
+
+.app-input {
+	margin-bottom: 2rem;
+	input {
+		@include app;
+		border-radius: 1.5rem;
+		background: rgba(255, 255, 255, 0.10);
+		padding: 2.4rem 2rem;
+		width: 100%;
+
+		@include bp($point_4) {
+			padding: 2rem;
+		}
+	}
+}
+
+.app-btn {
+	margin-right: 1.5rem;
+	@include bp($point_4) {
+		margin: 0 0 2rem 0;
+	}
+	input {
+		font-family: $font_3!important;
+		font-size: 2rem!important;
+		padding: 2.3rem 4rem!important;
+
+		@include bp($point_4) {
+			padding: 2rem!important;
+		}
+	}
+}
+.credit_form {
+}
+.credit_bottom {
+	@include flex-start;
+	padding-top: 2rem;
+
+	@include bp($point_4) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.form-notice {
+	text-align: left;
+	color: rgba(255, 255, 255, 0.70);
+	@include bp($point_0) {
+		font-size: 1.4rem;
+	}
+	a {
+		color: rgba(255, 255, 255, 0.70);
+		transition: all .3s ease;
+		&:hover {
+			color: $white;
+		}
+	}
+}
+.reviews {
+}
+.reviews_main {
+	margin-bottom: 20rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.reviews_head {
+	@include flex-space;
+	margin-bottom: 4.4rem;
+
+	h3 {
+		font-size: 4rem;
+		font-family: $font_1;
+		font-weight: 400;
+
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+		span {
+			font-family: $font_3;
+		}
+	}
+}
+
+
+.reviews_navigation {
+	@include flex-end;
+
+	@include bp($point_2) {
+		display: none;
+	}
+	&>div {
+		width: 6.5rem;
+		height: 6.5rem;
+		@include flex-center;
+		background-color: $red;
+		border-radius: 2rem;
+		cursor: pointer;
+		user-select: none;
+
+		&.swiper-button-disabled {
+			background: #FF484880;
+			pointer-events: none;
+		}
+		img {
+			width: 1.4rem;
+		}
+
+
+		&:first-child {
+			margin-right: 3rem;
+		}
+		&:nth-child(2) {
+
+			img {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.reviews_btn {
+}
+.rev-prev {
+}
+.rev-next {
+}
+.reviews_slider {
+
+	.swiper-slide  {
+		background-color: $dark;
+		border-radius: 3rem;
+		padding: 4rem;
+		color: $white;
+
+		@include bp($point_4) {
+			padding: 2rem;
+			border-radius: 2rem;
+		}
+	}
+
+	@include bp($point_2) {
+		padding-bottom: 8rem!important;
+	}
+
+	@include bp($point_4) {
+		padding-bottom: 4rem!important;
+	}
+}
+.reviews_slide--head {
+	h6 {
+		font-size: 2.2rem;
+		font-family: $font_3;
+		margin-bottom: 1rem;
+		@include bp($point_0) {
+			font-size: 2.4rem;
+		}
+		@include bp($point_4) {
+			font-size: 2.2rem;
+		}
+	}
+	p {
+		margin-bottom: 1.5rem;
+	}
+}
+.star-list {
+	@include flex-start;
+	margin-bottom: 2rem;
+}
+.star-item {
+}
+.reviews_slide--content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-height: 140%;
+  max-height: 15rem;
+
+	@include bp($point_0) {
+		font-size: 2rem;
+		max-height: 14rem;
+	}
+
+	@include bp($point_4) {
+		font-size: 1.8rem;
+		max-height: 17.5rem;
+	}
+	
+	&.visible {
+		max-height: 100%;
+		overflow-y: visible;
+		-webkit-line-clamp: 1000;
+		& + .reviews_slide--more {
+			button {
+				color: $white
+			}
+			.icons {
+				color: $white;
+				transform: rotate(180deg)
+			}
+		}
+	}
+}
+.reviews_slide--more {
+	@include flex-start;
+	color: $red;
+	cursor: pointer;
+	font-family: $font_3;
+	margin-top: 2rem;
+	button {
+		@include app;
+		margin-right: 1rem;
+		color: $red;
+		cursor: pointer;
+	}
+}
+.reviews_slideMore--icon {
+}
+.tabler:chevron-down {
+}
+.contacts {
+	height: 76.3rem;
+	position: relative;
+	@include bp($point_4) {
+		height: 80rem;
+	}
+
+	overflow: hidden;
+	.map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+.contacts_card {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30rem;
+	background-color: $dark;
+	color: $white;
+	padding: 6rem;
+	border-radius: 3rem;
+	@include bp($point_2) {
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	@include bp($point_4) {
+		padding: 3rem;
+		width: 100%;
+		max-width: 90%;
+		top: auto;
+		
+		bottom: 5rem;
+		transform: translate(-50%, 0%);
+	}
+	
+
+	.btn {
+		button {
+			@include bp($point_0) {
+				font-size: 2.4rem;
+			}
+
+			@include bp($point_4) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
+	h6 {
+		font-size: 2.8rem;
+		font-family: $font_3;
+		margin-bottom: 2.5rem;
+	}
+}
+.address {
+	margin-bottom: 2.5rem;
+	p {
+		opacity: .5;
+		margin-bottom: 1rem;
+	}
+	span {
+		font-family: $font_2;
+		font-weight: 500;
+		max-width: 35rem;
+		display: block;
+		@include bp($point_0) {
+			font-size: 2.4rem;
+		}
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+	}
+}
+.phone {
+	margin-bottom: 2.5rem;
+	p {
+		opacity: .5;
+		margin-bottom: 1rem;
+	}
+	a {
+		font-family: $font_2;
+		font-weight: 500;
+		max-width: 35rem;
+		display: block;
+		color: $white;
+		transition: all .3s ease;
+		@include bp($point_0) {
+			font-size: 2.4rem;
+		}
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+		&:hover {
+			color: $red;
+		}
+	}
+}
+.mail {
+	margin-bottom: 2.5rem;
+	p {
+		opacity: .5;
+		margin-bottom: 1rem;
+	}
+	a {
+		font-family: $font_2;
+		font-weight: 500;
+		max-width: 35rem;
+		display: block;
+		color: $white;
+		transition: all .3s ease;
+		@include bp($point_0) {
+			font-size: 2.4rem;
+		}
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+		&:hover {
+			color: $red;
+		}
+	}
+}
+
+.social-list {
+	@include flex-start;
+	flex-wrap: wrap;
+	margin: -1.5rem -1.5rem 4rem 0;
+	li {
+		padding: 1.5rem 1.5rem 0 0;
+	}
+}

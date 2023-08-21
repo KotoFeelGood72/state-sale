@@ -1,0 +1,22 @@
+header.header 
+	.section_in 
+		.header_main
+			.logo 
+				a(href="#")
+					img(src="i/logo-white.png", alt="Logo website")
+			nav.header_nav 
+				ul 
+					each item in ['Преимущества', 'Услуги', 'Этапы работ', 'О нас', 'Контакты']
+						li 
+							a(href="#")=item 
+			.header_info 
+				a(href="tel:+78129235115") +7 812 923 51 15
+				+btn({
+					name: 'Заказать звонок',
+					target: 'form',
+					class: 'trigger'
+				})
+				.header-burger.trigger(data-target="burger") 
+					span 
+					span 
+					span 

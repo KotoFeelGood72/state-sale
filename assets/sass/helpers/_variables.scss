@@ -1,0 +1,87 @@
+// Global 
+$header: 9.2rem;
+$footer: 50rem;
+
+// Mobile
+$header_mob: 9.2rem;
+$footer_mob: 10rem;
+
+//---------------------------------------------fonts
+$font_path: "../fonts/";
+$font_0: 'Montserrat-Light', sans-serif;
+$font_1: 'Montserrat-Regular', sans-serif;
+$font_2: 'Montserrat-Medium', sans-serif;
+$font_3: 'Montserrat-SemiBold', sans-serif;
+
+$font_size_base: 1.8rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$white: #fff;
+$black: #000;
+$dark: #353535;
+
+$red: #FF4848;
+$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #FF4848;
+
+
+$trans: transparent;
+
+
+
+
+$color_text_base: $dark;
+$color_link_base: $red;
+$body_bg: $white;
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popup : 101,
+	header : 100,
+	footer : 100,
+	el: -1,
+
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$page_width: 132rem;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_radius: 2.4rem;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_0: 1380px;
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+
+//---------------------------------------------forms
+
+$input_font_size: $font_size_base;
+$input_border_color: #ccc;
+$input_border_color_active: $white;
+$input_placeholder_color: rgba($white, .7);
+$input_text_color: $white;
+
+
+
+// Variable fonts
+
+$sm: 1.6rem;
+$md: 2rem;
+$xl: 2.3rem;
+$xl-2: 2.5rem;
+$xl-3: 3rem;
+$xl-4: 3.5rem;
+$xl-5: 4rem;

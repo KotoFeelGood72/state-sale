@@ -1,0 +1,114 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: $header;
+	width: 100%;
+	will-change: transform;
+	@include z-index(header);
+	color: $white;
+	@include flex-center;
+	a {
+		color: $white
+	}
+}
+.header {
+}
+.section_in {
+}
+.header_main {
+	@include flex-start;
+	padding: 2rem 0;
+	@include bp($point_0) {
+		justify-content: space-between;
+	}
+	.logo {
+		margin-right: 5rem;
+		@include bp($point_0) {
+			margin-right: 2rem;
+		}
+	}
+}
+.logo {
+}
+.header_nav {
+	margin-right: 6rem;
+	@include bp($point_0) {
+		margin-right: 4rem;
+	}
+	@include bp($point_1) {
+		display: none
+	}
+	ul {
+		@include flex-start;
+		flex-wrap: wrap;
+		margin: -4rem -4rem 0 0;
+		@include bp($point_0) {
+			margin: -2rem -2rem 0 0;
+		}
+		li {
+			padding: 4rem 4rem 0 0;
+			@include bp($point_0) {
+				padding: 2rem 2rem 0 0;
+				font-size: 2.2rem;
+			}
+		}
+	}
+}
+.header_info {
+	@include flex-start;
+	a {
+		font-size: 2.3rem;
+		font-family: $font_3;
+		display: block;
+		margin-right: 2.3rem;
+		@include bp($point_1) {
+			font-size: 2.6rem;
+		}
+
+		@include bp($point_4) {
+			display: none;
+		}
+	}
+
+	.btn {
+		@include bp($point_2) {
+			display: none;
+		}
+		button {
+			@include bp($point_1) {
+				font-size: 2.4rem;
+			}
+		}
+	}
+}
+.btn {
+}
+
+.header-burger {
+	display: none;
+	@include bp($point_1) {
+		display: block;
+		position: relative;
+		width: 6rem;
+		height: 4rem;
+		margin-left: 3rem;
+	}
+
+	span {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		border-bottom: .6rem solid $white;
+		&:nth-child(2) {
+			max-width: 50%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&:nth-child(3) {
+			bottom: 0;
+			max-width: 80%;
+		}
+	}
+}

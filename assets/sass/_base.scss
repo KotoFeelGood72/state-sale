@@ -1,0 +1,82 @@
+//------------------------------------------------------------base styles
+:root {
+	--full-screen: calc(var(--vh, 1vh) * 100);
+}
+
+html {
+	height: 100%;
+	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	@include bp(1620px) {
+		font: 400 calc(100vw / 1920 * 13)/1.33 $font_1;
+	}
+
+	@include bp($point_2) {
+		font-size: 10px;
+	}
+}
+
+body {
+	position: relative;
+	display: flex;
+
+	height: 100%;
+	font-size: $font_size_base;
+
+	color: $color_text_base;
+	-webkit-text-size-adjust: none;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $body_bg;
+
+	overflow-x: hidden;
+
+	@supports (display: grid) {
+		display: block;
+	}
+
+	
+}
+
+.wrapper {
+	position: relative;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+	@include bp($point_5) {
+		overflow-x: hidden!important;
+	}
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	padding: $header 0 0;
+	
+	flex: 1 0 auto;
+	
+	@include bp($point_2) {
+		padding: $header_mob 0 0;
+	}
+	@include bp($point_5) {
+		overflow-x: hidden!important;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color_link_base;
+	transition: all .3s ease;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		transition: all .3s ease;
+	}
+
+}
+

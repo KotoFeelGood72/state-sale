@@ -1,0 +1,375 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
+block content_block
+	section.hero 
+		.section_in 
+			.hero_main 
+				.hero-content 
+					h1!='<span>Срочный выкуп</span> квартир в Санкт-Петербурге'
+					p Купим вашу квартиру за 1-3 дня по цене до 95% от рыночной стоимости.
+					ul 
+						each item in ['Оформим и подготовим все документы;', 'Предоставим наличные в день сделки;', 'Гарантированный выход на сделку.']
+							li=item 
+					+btn({
+						name: 'Узнать стоимость квартиры',
+						target: 'form',
+						class: 'trigger'
+					})
+				.hero-form 
+					.hero_form--head 
+						h3 Бесплатная консультация
+						p Оставьте заявку, и мы свяжемся с вами!
+					.hero_action
+						+input({
+							place: 'Ваше имя'
+						})
+						+input({
+							place: 'Ваш телефон',
+							type: 'tel'
+						})
+						.btn 
+							input(type="submit", value="Отправить")
+						.form-notice!='Отправляя данные, вы соглашаетесь <a target="_blank" href="#">с политикой конфиденциальности.</a>'
+	section.what 
+		.section_in 
+			.what_main 
+				h2!='<span>Почему вам нужно</span> обратиться к нам:'
+				ul.what-list 
+					-
+						let what = [
+							{
+								title: 'Выкупаем <span>даже</span> недвижимость с долгами',
+								txt: 'Однокомнатные, двухкомнатные, трёхкомнатные квартиры, коммунальные квартиры и доли, нежилые помещения, офисы, апартаменты.'
+							},
+							{
+								title: 'Беремся за <span>сложные</span> юридические ситуации',
+								txt: 'В нашей компании работает один из лучших юридических отделов по недвижимости. Мы возьмемся за любую сложную ситуацию. Всё в рамках законодательства РФ.'
+							},
+							{
+								title: 'Предлагаем наиболее <span>выгодные</span> условия',
+								txt: 'Компания срочно покупает на самых выгодных условиях любой тип жилой и коммерческой недвижимости. Мы изучаем рынок недвижимости каждый день, и стараемся предлагать самую выгодную цену для Вас'
+							},
+							{
+								title: 'Выкупаем за <span>собственные</span> средства компании',
+								txt: 'У нас есть деньги, поэтому мы не предлагаем посреднических услуг. Если объект недвижимости нас устраивает, мы его покупаем'
+							},
+							{
+								title: '<span>Без лишних звонков</span> и навязчивой рекламы',
+								txt: 'Позвоните и опишите вашу недвижимость, на телефон отвечает высококлассный специалист, с которым вы сможете обсудить предварительную цену и тонкости, связанные с документами'
+							},
+							{
+								title: 'Продайте свою недвижимость по лучшей стоимости!',
+								txt: 'Оставьте заявку, и мы свяжемся с вами в ближайшее время.',
+								custom: true,
+								btn: true
+							}
+						]
+					each item, i in what
+						if item.custom
+							li.what-item 
+								h3!=item.title
+								p!=item.txt
+								+btn({
+									name: 'Заказать',
+									class: 'dark trigger',
+									target: 'form'
+								})
+						else 
+							li.what-item 
+								img(src=`i/what-${i}.jpg`, alt="")
+								h3!=item.title
+								p!=item.txt
+	section.services 
+		.section_in 
+			.services_main 
+				h3!='<span>Наши</span> основные услуги'
+				ul.services_list 
+					-
+						let services = [
+							{
+								title: 'Срочный выкуп за 1-3 дня',
+								txt: 'Срочно купим вашу квартиру в любом состоянии. </br></br>Средняя стоимость такой квартиры составит до 95% от её рыночной стоимости',
+							},
+							{
+								title: 'Продажа из-под ипотеки',
+								txt: 'Наша компания готова на собственные средства закрыть долг перед банком и продать Вашу квартиру по рыночной цене!',
+							},
+							{
+								title: 'Займы под залог недвижимости',
+								txt: 'Рассматриваем выдачу займов под залог квартиры в Санкт-Петербурге от 3.5 % в месяц без справок и других ненужных бумаг.',
+							},
+						]
+					each item, i in services 
+						li.services-item
+							.services_item--img 
+								img(src=`i/services-${i}.jpg`, alt="")
+							.services_item--content
+								h3=item.title 
+								p!=item.txt 
+								+btn({
+									name: 'Заказать',
+									class: 'trigger',
+									target: 'form'
+								})
+	section.topsale 
+		.section_in 
+			.topsale_main 
+				.topsale_content 
+					h3!='<span>Специальное</span> предложение'
+					p Выкупаем квартиры с плохой и разрушенной отделкой
+					ul 
+						each item in ['За 2 дня, используя собственные (наличные) средства компании.', 'По цене до 95% от рыночной стоимости.', 'Предоставляем финансовую помощь в продаже квартир, обременённых ипотекой.']
+							li=item 
+					+btn({
+						name: 'Получить предложение',
+						class: 'trigger',
+						target: 'form'
+					})
+				.topsale_img 
+					img(src="i/topsale.jpg", alt="")
+					img(src="i/topmark.png", alt="" class="topmarker")
+	section.real 
+		.section_in 
+			.real_main 
+				.real_head 
+					h4!='<span>Сравним выгоду</span> продажи однокомнатной квартиры'
+					p Сравним выгоду продажи однокомнатной квартиры по цене 2 500 000 ₽
+				.real-list 
+					.red
+						.card-content 
+							h5 Агентство недвижимости
+							ul
+								- let cardTitle = ['Время продажи:', 'Встречи с агентом: ', 'Услуги риэлтора: ', 'Коммунальные платежи: ', 'Услуги нотариуса: ', 'Торг при покупке: ']
+								- let cardTxt = ['30- 90 дней', 'Минимум 5-10 показов', '50 000 ₽', '20 000 ₽', '20 000 ₽', '3-7% от стоимости']
+									-for(i = 0; i < cardTitle.length; i++)
+										li 
+											p=cardTitle[i]
+											span=cardTxt[i]
+						.card-bottom 
+							p Получите на руки: 
+							span 2 235 000 ₽
+					.green
+						.card-content 
+							h5 Срочный выкуп
+							ul
+								- let cardTitles = ['Время продажи:', 'Осмотр квартиры, встреча в МФЦ: ', 'Скидка за срочность: ']
+								- let cardTxts = ['1-3 дня', '2 встречи', '5-10 %']
+									-for(i = 0; i < cardTitles.length; i++)
+										li 
+											p=cardTitle[i]
+											span=cardTxts[i]
+						.card-bottom 
+							p Получите на руки: 
+							span 2 250 000 ₽
+	section.example 
+		.section_in 
+			.example_main
+				.example-head 
+					h5!='<span>Примеры</span> выкупленных объектов'
+					.example-nav 
+						.example_navBtn.ex-prev 
+							img(src="i/arrows.svg", alt="")
+						.example_navBtn.ex-next 
+							img(src="i/arrows.svg", alt="")
+				.example-slider.swiper 
+					.swiper-wrapper 
+						-for(i = 0; i < 12; i++)
+							.swiper-slide 
+								.example_slide 
+									.example_slide--img 
+										img(src="i/example.jpg", alt="")
+									.example_slide--content
+										h3 Двухкомнатная квартира
+										ul 
+											li 
+												p Рыночная стоимость:
+												span 2 000 000 ₽
+											li 
+												p Выкупная стоимость:
+												span 2 500 000 ₽
+											li 
+												p Время получения денег:
+												span 3 дня
+					.example-pag
+				.example-bottom 
+					img(src="i/example-arrow.svg", alt="")
+					+btn({
+						name: 'Узнать стоимость квартиры',
+						class: 'trigger',
+						target: 'form'
+					})
+	section.money 
+		.section_in 
+			.money_main 
+				h5!='<span>Что нужно</span>, чтобы получить деньги через 1-3 дня'
+				ul.money-list 
+					-
+						let money = [
+							{
+								title: 'Звонок',
+								txt: 'Свяжитесь с нами удобным для Вас способом или по телефону',
+								tel: '+7 812 923 51 15'
+							},
+							{
+								title: 'Оценка',
+								txt: 'Мы изучим все документы, проанализируем средние рыночные цены по вашему району, проведем осмотр и оценку квартиры. Это позволяет озвучить ее точную рыночную стоимость!',
+							},
+							{
+								title: 'Договор',
+								txt: 'Все документы оформляются опытным юристом и официально подтверждаются нотариусом. Вам нужно только заверить документ.',
+							},
+							{
+								title: 'Выплата',
+								txt: 'Вы получите денежную сумму, близкую к рыночной стоимости квартиры. Деньги выплачиваются сразу же на банковскую карту или наличными. ',
+							},
+						]
+					each item, i in money 
+						li.money-item
+							.money_item--img 
+								img(src=`i/money-${i}.png`, alt="")
+							.money_item--content 
+								h3=item.title 
+								p=item.txt 
+								if item.tel 
+									a(href=`tel:${item.tel}`)=item.tel
+	section.about 
+		.section_in 
+			.about_main
+				.about_img 
+					img(src="i/about.jpg", alt="")
+					h3 Николай Савин
+					p Генеральный директор ООО "Городская недвижимость"
+				.about_content 
+					h5!='<span>О нашей</span> компании'
+					.about-txt
+						p "Городская недвижимость" - ведущая компания в Санкт-Петербурге, специализирующаяся на срочном выкупе недвижимости и предоставлении займов под залог недвижимости. Наша компания предлагает выгодные условия, в том числе низкую ставку от 3,5%, что делает нашу услугу одной из самых доступных на рынке.
+						p Мы гарантируем быстрое и прозрачное оформление сделок, позволяющее клиентам получить необходимую сумму в кратчайшие сроки.Наша команда профессионалов всегда готова помочь клиентам в решении их финансовых вопросов, предлагая индивидуальный подход и высокий уровень сервиса. "Городская недвижимость" - ваш надежный партнер в решении финансовых вопросов и операций с недвижимостью.
+					+btn({
+						name: 'Оставить заявку',
+						class: 'trigger',
+						target: 'form'
+					})
+	section.credit 
+		.section_in 
+			.credit_main 
+				.credit_img 
+					img(src="i/credit.jpg", alt="")
+				.credit_form--w 
+					.credit_head 
+						h3!='<span>Погасим ипотеку</span> за вас!'
+						p И продим недвижимость по рыночной цене.
+					.credit_form 
+						+input({
+							place: 'Ваше имя'
+						})
+						+input({
+							place: 'Ваш телефон',
+							type: 'tel'
+						})
+						.credit_bottom 
+							.app-btn.btn 
+								input(type="submit" value="Получить предложение")
+							.form-notice!='Отправляя форму, вы соглашаетесь c <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+	section.reviews 
+		.section_in 
+			.reviews_main 
+				.reviews_head 
+					h3!='<span>Отзывы</span> клиентов'
+					.reviews_navigation
+						.reviews_btn.rev-prev 
+							img(src="i/arrows.svg", alt="")
+						.reviews_btn.rev-next 
+							img(src="i/arrows.svg", alt="")
+				.reviews_slider.swiper
+					.swiper-wrapper
+						.swiper-slide
+							.reviews-slide
+								.reviews_slide--head 
+									h6 Имя Фамилия
+									p Двухкомнатная квартира
+									ul.star-list 
+										-for(i = 0; i < 5; i++)
+											li.star-item
+												img(src="i/star.svg", alt="")
+									.reviews_slide--content!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+								.reviews_slide--more 
+									button(type="button") Показать больше
+									.reviews_slideMore--icon
+										+iconify({
+											icon: 'tabler:chevron-down'
+										})
+						.swiper-slide
+							.reviews-slide
+								.reviews_slide--head 
+									h6 Имя Фамилия
+									p Двухкомнатная квартира
+									ul.star-list 
+										-for(i = 0; i < 5; i++)
+											li.star-item
+												img(src="i/star.svg", alt="")
+									.reviews_slide--content!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+								.reviews_slide--more 
+									button(type="button") Показать больше
+									.reviews_slideMore--icon
+										+iconify({
+											icon: 'tabler:chevron-down'
+										})
+						.swiper-slide
+							.reviews-slide
+								.reviews_slide--head 
+									h6 Имя Фамилия
+									p Двухкомнатная квартира
+									ul.star-list 
+										-for(i = 0; i < 5; i++)
+											li.star-item
+												img(src="i/star.svg", alt="")
+									.reviews_slide--content!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+								.reviews_slide--more 
+									button(type="button") Показать больше
+									.reviews_slideMore--icon
+										+iconify({
+											icon: 'tabler:chevron-down'
+										})
+						.swiper-slide
+							.reviews-slide
+								.reviews_slide--head 
+									h6 Имя Фамилия
+									p Двухкомнатная квартира
+									ul.star-list 
+										-for(i = 0; i < 5; i++)
+											li.star-item
+												img(src="i/star.svg", alt="")
+									.reviews_slide--content!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+								.reviews_slide--more 
+									button(type="button") Показать больше
+									.reviews_slideMore--icon
+										+iconify({
+											icon: 'tabler:chevron-down'
+										})
+					.reviews-pag
+	section.contacts
+		.map
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8f03c86f4a2a5b2b589fbdaecbe8d2fb2e87c97125de371c3813726dd7bc0fcf&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+		.contacts_card 
+			h6 Контакты
+			.address
+				p Адрес
+				span Санкт-Петербург, бульвар Новаторов д.11, кВ.56
+			.phone 
+				p Телефон
+				a(href="#") +7 812 923 51 15
+			.mail 
+				p Почта
+				a(href="#") 555098vn@mail.ru
+			ul.social-list 
+				each item in ['wa', 'tg']
+					li 
+						a(href="#")
+							img(src=`i/${item}.svg`, alt="") 
+			+btn({
+				name: 'Заказать звонок',
+				class: 'trigger',
+				target: 'form'
+			})

@@ -1,0 +1,12 @@
+// Section styles
+.section_in {
+	max-width: $page_width;
+	width: 100%;
+	margin: 0 auto;
+	@include bp($point_2) {
+		padding: 0 2rem;
+	}
+}
+// End Style
+
+

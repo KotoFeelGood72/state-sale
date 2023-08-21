@@ -1,0 +1,14 @@
+mixin btn(data)
+	.btn(class=data.class ? data.class : '' data-target=data.target ? data.target : '')
+		if data.link 
+			a(href="#")=data.link 
+		else if data.submit 
+			input(type="submit" value=data.submit ? data.submit : '')
+		else 
+			button(type="button")=data.name 
+
+
+
+mixin input(data)
+	.app-input(class=data.class ? data.class : '')
+		input(type=data.type ? data.type : data.type="text" placeholder=data.place ? data.place : data.place="Ваше имя" data-type=data.types ? data.types : '')

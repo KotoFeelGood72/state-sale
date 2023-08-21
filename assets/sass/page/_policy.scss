@@ -1,0 +1,79 @@
+
+.policy_main {
+	padding: 3rem 0;
+	line-height: 2.8rem;
+	font-size: 1.6rem;
+	position: relative;
+	@include bp($point_2) {
+		font-size: 1.4rem;
+		line-height: 2.6rem;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 3rem;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
+	}
+}
+.policy_list>li {
+	margin-bottom: 5rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
+}
+.policy_list {
+	li>p {
+		font-size: 2.2rem;
+		font-family: $font_3;
+		margin-bottom: 2rem;
+		@include bp($point_2) {
+			font-size: 1.8rem;
+		}
+	}
+	li>span {
+		margin-bottom: 2rem;
+		display: flex;
+	}
+}
+.sub_list {
+	padding-left: 2rem;
+	@include bp($point_2) {
+		padding-left: 1rem;
+	}
+	li {
+		margin-bottom: 1rem;
+	}
+}
+.sub_item--list {
+	padding-left: 2rem;
+	margin-bottom: 2rem;
+	@include bp($point_2) {
+		padding-left: 1rem;
+	}
+}
+.sub_items {
+	padding-left: 2rem;
+	@include bp($point_2) {
+		padding-left: 1rem;
+	}
+}
+.sub_items>p {
+	margin-bottom: 2rem;
+	font-size: 1.8rem;
+	font-family: $font_3;
+}
+.end_subtitle {
+	font-size: 1.6rem!important;
+	font-family: $font_2!important;
+
+}
+.mod_end {
+	p {
+		@include bp($point_2) {
+			font-size: 1.4rem!important;
+			font-family: $font_1!important;
+			line-height: 2.6rem;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.popup.popup_form(data-id="form")
+	.popup_bg.remove 
+	.popup_main.popup_form--main 
+		.popup_close.popup_form--close.remove
+			+iconify({
+				icon: 'akar-icons:cross'
+			})
+		.popup_form--head 
+			h3 Бесплатная консультация
+			p Оставьте заявку, и мы свяжемся с вами!
+		.popup_form--action 
+			+input({
+				place: 'Ваше имя'
+			})
+			+input({
+				place: 'Ваш телефон',
+				type: 'tel'
+			})
+			.app-btn.btn.remove 
+				input(type="submit", value="Отправить")
+			.form-notice!='Отправляя форму, вы соглашаетесь c <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+
+
+.popup.burger(data-id="burger") 
+	.popup_bg.remove 
+	.popup_main.popup_main--burger
+		.popup_close.burger-close.remove
+			+iconify({
+				icon: 'akar-icons:cross'
+			})
+		.logo 
+			a(href="#")
+				img(src="i/logo-white.png", alt="Logo website")
+		nav.burger-nav 
+			ul 
+				each item in ['Преимущества', 'Услуги', 'Этапы работ', 'О нас', 'Контакты']
+					li 
+						a(href="#")=item 
+		.header_info 
+			a(href="tel:+78129235115") +7 812 923 51 15
+			+btn({
+				name: 'Заказать звонок',
+				target: 'form',
+				class: 'trigger remove'
+			})
